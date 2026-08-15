@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Northstar Support Hub</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="hero">
+
+        <div class="container">
+
+            <p class="brand">NORTHSTAR RETAIL CO.</p>
+
+            <h1>Northstar Support Hub</h1>
+
+            <p class="tagline">
+                Fast answers. Fewer tickets. Better support.
+            </p>
+
+        </div>
+
+    </header>
+
+
+    <main class="container">
+
+        <section class="intro">
+
+            <h2>How can we help you?</h2>
+
+            <p>
+                Choose what you need help with below.
+            </p>
+
+        </section>
+
+
+        <section class="cards">
+
+
+            <!-- ORDER STATUS -->
+
+            <article class="card">
+
+                <div class="icon">📦</div>
+
+                <h3>Order Status</h3>
+
+                <p>
+                    Check the status and delivery information
+                    for your order.
+                </p>
+
+                <button onclick="showSection('order-section')">
+                    Check Order
+                </button>
+
+            </article>
+
+
+            <!-- RETURNS -->
+
+            <article class="card">
+
+                <div class="icon">🔄</div>
+
+                <h3>Returns & Refunds</h3>
+
+                <p>
+                    Find answers about returning products
+                    and refunds.
+                </p>
+
+                <button onclick="showSection('returns-section')">
+                    Get Help
+                </button>
+
+            </article>
+
+
+            <!-- STOCK -->
+
+            <article class="card">
+
+                <div class="icon">🏷️</div>
+
+                <h3>Stock Availability</h3>
+
+                <p>
+                    Check whether a product and size
+                    are available.
+                </p>
+
+                <button onclick="showSection('stock-section')">
+                    Check Stock
+                </button>
+
+            </article>
+
+        </section>
+
+
+        <!-- ORDER SECTION -->
+
+        <section id="order-section" class="support-section">
+
+            <h2>📦 Check Order Status</h2>
+
+            <label for="order-input">
+                Enter your order number
+            </label>
+
+            <input
+                id="order-input"
+                type="text"
+                placeholder="Example: NS1001"
+            >
+
+            <button id="order-button">
+                Check Order
+            </button>
+
+            <div id="order-result" class="result"></div>
+
+        </section>
+
+
+        <!-- RETURNS SECTION -->
+
+        <section id="returns-section" class="support-section">
+
+            <h2>🔄 Returns & Refunds</h2>
+
+            <label for="support-question">
+                Choose your question
+            </label>
+
+            <select id="support-question">
+
+                <option value="">
+                    Select a question
+                </option>
+
+                <option value="return">
+                    How do I return an item?
+                </option>
+
+                <option value="refund">
+                    When will I receive my refund?
+                </option>
+
+            </select>
+
+            <button id="support-button">
+                Get Answer
+            </button>
+
+            <div id="support-result" class="result"></div>
+
+        </section>
+
+
+        <!-- STOCK SECTION -->
+
+        <section id="stock-section" class="support-section">
+
+            <h2>🏷️ Check Stock Availability</h2>
+
+            <label for="product-select">
+                Product
+            </label>
+
+            <select id="product-select">
+
+                <option value="">
+                    Select product
+                </option>
+
+                <option value="Black Runner Shoes">
+                    Black Runner Shoes
+                </option>
+
+                <option value="White Classic Sneakers">
+                    White Classic Sneakers
+                </option>
+
+            </select>
+
+
+            <label for="size-select">
+                Size
+            </label>
+
+            <select id="size-select">
+
+                <option value="">
+                    Select size
+                </option>
+
+                <option value="40">40</option>
+                <option value="41">41</option>
+                <option value="42">42</option>
+                <option value="43">43</option>
+
+            </select>
+
+
+            <button id="stock-button">
+                Check Stock
+            </button>
+
+            <div id="stock-result" class="result"></div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            Northstar Support Deflection MVP
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
