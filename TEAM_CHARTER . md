@@ -1,0 +1,112 @@
+# NORTHSTAR TEAM CHARTER
+
+## 1. Project Name
+
+Northstar Support Deflection MVP
+
+## 2. Team Members
+
+1. Nicole Muthee
+2. Deirdre Sifuna
+3. Pearl Nkosi
+4. Wanyangu Flavius
+5. Jesse Ochieng
+
+## 3. Project Goal
+
+The goal of Northstar is to create a self-service customer support
+prototype that helps customers find answers without immediately
+opening a support ticket.
+
+The MVP covers:
+
+- Order Status
+- Returns & Refunds
+- Stock Availability
+
+## 4. Communication Rules
+
+Team members will communicate regularly about project progress.
+
+If a member is blocked, they should tell the team as soon as possible.
+
+Team members should respond to important project messages promptly.
+
+## 5. Deadlines
+
+Each member is responsible for completing their assigned tasks
+within the agreed project schedule.
+
+If a member expects to miss a deadline, they must inform the team
+before the deadline.
+
+## 6. GitHub Rules
+
+Each member will work on their assigned branch.
+
+Members will make meaningful commits.
+
+Commit messages will describe what changed and why.
+
+Completed work should be submitted through a Pull Request for review.
+
+## 7. Task Ownership
+
+Each task has one main owner.
+
+The owner is responsible for completing the Definition of Done.
+
+The owner must keep the GitHub Project Board updated.
+
+## 8. Board Status
+
+TODO means the task has not started.
+
+IN PROGRESS means the owner is actively working.
+
+REVIEW means the owner has completed the work and another member
+needs to check it.
+
+DONE means the Definition of Done has been satisfied.
+
+## 9. Conflict Resolution
+
+If team members disagree:
+
+1. Discuss the problem respectfully.
+2. Check the project requirements.
+3. Compare the possible solutions.
+4. Agree on the best solution.
+5. If necessary, Jesse coordinates the technical decision.
+6. If the issue affects project requirements, Nicole coordinates
+   the final project decision.
+
+## 10. Contribution Expectations
+
+Every member must make a meaningful contribution.
+
+Members should complete their assigned tasks.
+
+Members should help teammates when reasonable.
+
+All contributions should be visible through GitHub history.
+
+## 11. Escalation
+
+If a member becomes unavailable or cannot complete their task,
+the team should discuss the problem early and redistribute work
+if necessary.
+
+## 12. Signatures
+
+Nicole Muthee: ______________________
+
+Deirdre Sifuna: _____________________
+
+Pearl Nkosi: ________________________
+
+Wanyangu Flavius: ___________________
+
+Jesse Ochieng: ______________________
+
+Date: ______________________________
