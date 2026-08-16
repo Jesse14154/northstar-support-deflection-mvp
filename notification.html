@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stock Notification | Northstar Retail Core</title>
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+<div class="brand-watermark" aria-hidden="true">NORTHSTAR RETAIL CORE</div>
+<header class="site-header">
+  <a class="brand" href="../index.html"><span class="brand-mark">N</span><span><strong>NORTHSTAR</strong><small>RETAIL CORE</small></span></a>
+  <a class="icon-button" href="../index.html"><span class="icon">⌂</span><span>Home</span></a>
+</header>
+<main class="page-shell">
+<a class="back-link" href="../index.html">← Support Centre</a>
+<section class="page-head">
+  <div><p class="eyebrow">INVENTORY</p><h1>Stock Notification</h1></div>
+  <p>Record a demonstration notification request for a specific product and size without pretending that a real email service is connected.</p>
+</section>
+
+<section class="panel">
+  <div class="form-grid">
+    <div class="field"><label>Product ID</label><input id="productId" value="NS-1001"></div>
+    <div class="field"><label>Size</label><select id="size"><option>S</option><option>M</option><option>L</option><option>XL</option></select></div>
+    <div class="field full"><label>Email</label><input id="email" type="email" placeholder="customer@example.com"></div>
+  </div>
+  <div class="action-row"><button class="primary-button" id="notify">Request notification →</button></div>
+  <div id="result" class="result"></div>
+</section>
+<script>
+document.getElementById("notify").addEventListener("click",()=>{
+ const email=document.getElementById("email").value.trim();
+ const product=document.getElementById("productId").value.trim().toUpperCase();
+ const size=document.getElementById("size").value;
+ const result=document.getElementById("result");
+ if(!email){result.className="result show";result.innerHTML='<div class="notice"><strong>Email required.</strong><br>Enter an email address so the demonstration request has a contact destination.</div>';return;}
+ const ref="STK-"+Math.floor(10000+Math.random()*89999);
+ result.className="result show";
+ result.innerHTML='<div class="result-title">Notification request recorded</div><p>Product: <strong>'+product+'</strong><br>Size: <strong>'+size+'</strong></p><div class="reference">'+ref+'</div><p>This is a demonstration notification. No real email is sent by this prototype.</p><div class="action-row"><a class="primary-button" href="stock.html">Check another product →</a><a class="secondary-button" href="../index.html">Return home</a></div>';
+});
+</script>
+</main>
+<footer class="site-footer"><span>NORTHSTAR RETAIL CORE</span><span>Support Deflection MVP · Demonstration Environment</span></footer>
+</body></html>

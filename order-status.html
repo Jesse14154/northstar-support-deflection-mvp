@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order Status | Northstar Retail Core</title>
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+<div class="brand-watermark" aria-hidden="true">NORTHSTAR RETAIL CORE</div>
+<header class="site-header">
+  <a class="brand" href="../index.html"><span class="brand-mark">N</span><span><strong>NORTHSTAR</strong><small>RETAIL CORE</small></span></a>
+  <a class="icon-button" href="../index.html"><span class="icon">⌂</span><span>Home</span></a>
+</header>
+<main class="page-shell">
+<a class="back-link" href="../index.html">← Support Centre</a>
+<section class="page-head">
+  <div><p class="eyebrow">ORDERS</p><h1>Order Status</h1></div>
+  <p>Use demonstration order details to see the current fulfilment stage and move directly into delivery information.</p>
+</section>
+
+<section class="panel">
+  <div class="form-grid">
+    <div class="field"><label>Order number</label><input id="order" value="NS1001"></div>
+    <div class="field"><label>Verification detail</label><input id="verification" value="714440059"></div>
+  </div>
+  <div class="action-row"><button class="primary-button" id="lookup">View order →</button></div>
+  <div id="result" class="result"></div>
+</section>
+<script src="../data/demo-data.js"></script>
+<script>
+document.getElementById("lookup").addEventListener("click",()=>{
+ const id=document.getElementById("order").value.trim().toUpperCase();
+ const v=document.getElementById("verification").value.trim();
+ const o=NORTHSTAR_DATA.orders[id], r=document.getElementById("result");
+ if(!o || o.verification!==v){r.className="result show";r.innerHTML='<div class="notice"><strong>We could not verify that order.</strong><br>For the demonstration, try NS1001 / 714440059.</div>';return;}
+ r.className="result show";
+ r.innerHTML='<span class="status-pill status-success">'+o.status.toUpperCase()+'</span><div class="result-title">Order '+id+'</div><p>Estimated delivery: <strong>'+o.eta+'</strong><br>Delivery method: <strong>'+o.method+'</strong></p><div class="action-row"><a class="primary-button" href="order-tracking.html?order='+id+'">View delivery progress →</a><a class="secondary-button" href="returns.html">Returns & refunds</a></div>';
+});
+</script>
+</main>
+<footer class="site-footer"><span>NORTHSTAR RETAIL CORE</span><span>Support Deflection MVP · Demonstration Environment</span></footer>
+</body></html>

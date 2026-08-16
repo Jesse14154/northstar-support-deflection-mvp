@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Human Support | Northstar Retail Core</title>
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+<div class="brand-watermark" aria-hidden="true">NORTHSTAR RETAIL CORE</div>
+<header class="site-header">
+  <a class="brand" href="../index.html"><span class="brand-mark">N</span><span><strong>NORTHSTAR</strong><small>RETAIL CORE</small></span></a>
+  <a class="icon-button" href="../index.html"><span class="icon">⌂</span><span>Home</span></a>
+</header>
+<main class="page-shell">
+<a class="back-link" href="../index.html">← Support Centre</a>
+<section class="page-head">
+  <div><p class="eyebrow">ESCALATION</p><h1>Human Support</h1></div>
+  <p>Escalate only when self-service cannot resolve the issue. The request keeps the customer's context instead of sending them elsewhere.</p>
+</section>
+
+<section class="panel">
+  <div class="form-grid">
+    <div class="field"><label>Issue type</label><select id="issue"><option>Returns and refunds</option><option>Order status</option><option>Stock availability</option><option>Other</option></select></div>
+    <div class="field"><label>Related reference</label><input id="reference" value="NS1002"></div>
+    <div class="field full"><label>What do you need help with?</label><textarea id="description" placeholder="Describe the issue and what you have already tried."></textarea></div>
+  </div>
+  <div class="action-row"><button class="primary-button" id="submit">Submit support request →</button></div>
+  <div id="result" class="result"></div>
+</section>
+<script>
+document.getElementById("submit").addEventListener("click",()=>{
+ const desc=document.getElementById("description").value.trim(),r=document.getElementById("result");
+ if(!desc){r.className="result show";r.innerHTML='<div class="notice"><strong>Please describe the issue.</strong><br>This gives the support team enough context to continue.</div>';return;}
+ const ref="SUP-"+Math.floor(10000+Math.random()*89999);
+ r.className="result show";
+ r.innerHTML='<div class="result-title">Support request recorded</div><div class="reference">'+ref+'</div><p>The request contains the issue type, related reference and description entered above. This is a demonstration workflow; it does not send a live support message.</p><a class="primary-button" href="../index.html">Return to Support Centre →</a>';
+});
+</script>
+</main>
+<footer class="site-footer"><span>NORTHSTAR RETAIL CORE</span><span>Support Deflection MVP · Demonstration Environment</span></footer>
+</body></html>

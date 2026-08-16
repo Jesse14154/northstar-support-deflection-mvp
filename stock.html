@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stock Availability | Northstar Retail Core</title>
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+<div class="brand-watermark" aria-hidden="true">NORTHSTAR RETAIL CORE</div>
+<header class="site-header">
+  <a class="brand" href="../index.html"><span class="brand-mark">N</span><span><strong>NORTHSTAR</strong><small>RETAIL CORE</small></span></a>
+  <a class="icon-button" href="../index.html"><span class="icon">⌂</span><span>Home</span></a>
+</header>
+<main class="page-shell">
+<a class="back-link" href="../index.html">← Support Centre</a>
+<section class="page-head">
+  <div><p class="eyebrow">INVENTORY</p><h1>Stock Availability</h1></div>
+  <p>Search by product ID and immediately see the product, image, colour, sizes and current demonstration availability.</p>
+</section>
+
+<section class="panel">
+  <div class="form-grid">
+    <div class="field full">
+      <label for="productId">Product ID</label>
+      <input id="productId" value="NS-1001" placeholder="Example: NS-1001">
+    </div>
+    <div class="field">
+      <label for="size">Size</label>
+      <select id="size"><option value="">Select a size</option><option>S</option><option>M</option><option>L</option><option>XL</option></select>
+    </div>
+  </div>
+  <div class="action-row">
+    <button class="primary-button" id="checkStock">Check availability →</button>
+  </div>
+  <div id="stockResult" class="result"></div>
+</section>
+<section class="panel">
+  <p class="eyebrow">DEMONSTRATION PRODUCT IDS</p>
+  <h2 style="margin:0;color:var(--navy)">Searchable product catalogue</h2>
+  <div class="alt-grid">
+    <div class="alt-card"><img src="../assets/products/northstar-t.svg" alt="Northstar T-shirt"><h4>NS-1001</h4><p>Northstar T · Midnight Navy</p></div>
+    <div class="alt-card"><img src="../assets/products/northstar-hoodie.svg" alt="Northstar Core Hoodie"><h4>NS-1002</h4><p>Northstar Core Hoodie · Stone</p></div>
+    <div class="alt-card"><img src="../assets/products/northstar-motion.svg" alt="Northstar Motion T-shirt"><h4>NS-1003</h4><p>Northstar Motion · Off White</p></div>
+  </div>
+</section>
+<script src="../data/demo-data.js"></script>
+<script>
+const result = document.getElementById("stockResult");
+document.getElementById("checkStock").addEventListener("click", () => {
+  const id = document.getElementById("productId").value.trim().toUpperCase();
+  const size = document.getElementById("size").value;
+  const p = NORTHSTAR_DATA.products[id];
+  if(!p){
+    result.className="result show";
+    result.innerHTML='<div class="notice"><strong>Product not found.</strong><br>Check the product ID or browse the demonstration catalogue below.</div>';
+    return;
+  }
+  const available = size ? (p.stock[size] || 0) > 0 : Object.values(p.stock).some(v=>v>0);
+  const selectedSize = size || "Choose a size";
+  let status = size ? (p.stock[size] > 5 ? "IN STOCK" : p.stock[size] > 0 ? "LOW STOCK" : "CURRENTLY UNAVAILABLE") : "PRODUCT FOUND";
+  let cls = status==="IN STOCK" ? "status-success" : status==="CURRENTLY UNAVAILABLE" ? "status-danger" : "status-warning";
+  const sizeRows = Object.entries(p.stock).map(([s,n]) => '<span class="meta-chip">'+s+': '+(n>0?n+" available":"Unavailable")+'</span>').join("");
+  result.className="result show";
+  result.innerHTML = '<div class="product-card"><img class="product-image" src="../'+p.image+'" alt="'+p.name+'"><div class="product-meta"><span class="status-pill '+cls+'">'+status+'</span><h3>'+p.name+'</h3><p>'+p.description+'</p><div class="meta-row"><span class="meta-chip">ID: '+p.id+'</span><span class="meta-chip">Colour: '+p.colour+'</span><span class="meta-chip">Type: '+p.type+'</span><span class="meta-chip">Selected size: '+selectedSize+'</span></div><div class="meta-row">'+sizeRows+'</div><div class="action-row">'+(status==="CURRENTLY UNAVAILABLE" ? '<a class="primary-button" href="alternatives.html?product='+encodeURIComponent(p.id)+'">View available alternatives →</a><a class="secondary-button" href="notification.html?product='+encodeURIComponent(p.id)+'&size='+encodeURIComponent(size)+'">Request stock notification</a>' : '<a class="secondary-button" href="../index.html">Return to support centre</a>')+'</div></div></div>';
+});
+</script>
+</main>
+<footer class="site-footer"><span>NORTHSTAR RETAIL CORE</span><span>Support Deflection MVP · Demonstration Environment</span></footer>
+</body></html>

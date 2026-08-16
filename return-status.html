@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Return Status | Northstar Retail Core</title>
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+<div class="brand-watermark" aria-hidden="true">NORTHSTAR RETAIL CORE</div>
+<header class="site-header">
+  <a class="brand" href="../index.html"><span class="brand-mark">N</span><span><strong>NORTHSTAR</strong><small>RETAIL CORE</small></span></a>
+  <a class="icon-button" href="../index.html"><span class="icon">⌂</span><span>Home</span></a>
+</header>
+<main class="page-shell">
+<a class="back-link" href="../index.html">← Support Centre</a>
+<section class="page-head">
+  <div><p class="eyebrow">RETURNS</p><h1>Return Status</h1></div>
+  <p>Generate a demonstration return reference and follow the return journey through its next stages.</p>
+</section>
+
+<section class="panel">
+  <span class="status-pill status-warning">READY TO START</span>
+  <h2 style="color:var(--navy)">Create your return reference</h2>
+  <p>For demonstration purposes, the reference below is generated in the browser and is not connected to a live carrier.</p>
+  <button class="primary-button" id="start">Start return →</button>
+  <div id="result" class="result"></div>
+</section>
+<script>
+document.getElementById("start").addEventListener("click",()=>{
+ const ref="RET-"+Math.floor(10000+Math.random()*89999), r=document.getElementById("result");
+ r.className="result show";
+ r.innerHTML='<div class="result-title">Return created</div><div class="reference">'+ref+'</div><p>Use this demonstration reference when discussing the return.</p><div class="timeline"><div class="timeline-step"><span class="timeline-dot">1</span><div><strong>Return created</strong><br><small>Reference generated.</small></div></div><div class="timeline-step"><span class="timeline-dot">2</span><div><strong>Awaiting hand-off</strong><br><small>Package is ready for the return carrier.</small></div></div><div class="timeline-step"><span class="timeline-dot">3</span><div><strong>Received</strong><br><small>Demonstration next stage.</small></div></div></div><a class="secondary-button" href="../index.html">Return home</a>';
+});
+</script>
+</main>
+<footer class="site-footer"><span>NORTHSTAR RETAIL CORE</span><span>Support Deflection MVP · Demonstration Environment</span></footer>
+</body></html>

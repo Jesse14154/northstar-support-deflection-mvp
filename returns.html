@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Returns & Refunds | Northstar Retail Core</title>
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+<div class="brand-watermark" aria-hidden="true">NORTHSTAR RETAIL CORE</div>
+<header class="site-header">
+  <a class="brand" href="../index.html"><span class="brand-mark">N</span><span><strong>NORTHSTAR</strong><small>RETAIL CORE</small></span></a>
+  <a class="icon-button" href="../index.html"><span class="icon">⌂</span><span>Home</span></a>
+</header>
+<main class="page-shell">
+<a class="back-link" href="../index.html">← Support Centre</a>
+<section class="page-head">
+  <div><p class="eyebrow">RETURNS</p><h1>Returns & Refunds</h1></div>
+  <p>Check a demonstration order against the return policy, understand why the result applies and receive the complete next-step instructions.</p>
+</section>
+
+<section class="panel">
+  <div class="form-grid">
+    <div class="field"><label>Order number</label><input id="order" value="NS1001"></div>
+    <div class="field"><label>Reason</label><select id="reason"><option>I want to return an item</option><option>Defective item</option><option>Damaged item</option><option>Wrong item received</option><option>Refund question</option></select></div>
+  </div>
+  <div class="action-row"><button class="primary-button" id="check">Check eligibility →</button></div>
+  <div id="result" class="result"></div>
+</section>
+<script src="../data/demo-data.js"></script>
+<script>
+document.getElementById("check").addEventListener("click",()=>{
+ const id=document.getElementById("order").value.trim().toUpperCase(), r=document.getElementById("result");
+ if(id==="NS1001"){
+  r.className="result show";
+  r.innerHTML='<span class="status-pill status-success">ELIGIBLE</span><div class="result-title">Return approved</div><p>This demonstration order is within the standard 30-day return period.</p><div class="action-row"><a class="primary-button" href="return-instructions.html?order='+id+'">View complete return instructions →</a><a class="secondary-button" href="return-status.html">View return status</a></div>';
+ }else if(id==="NS1002"){
+  r.className="result show";
+  r.innerHTML='<span class="status-pill status-warning">OUTSIDE STANDARD WINDOW</span><div class="result-title">Human review is available</div><div class="notice"><strong>According to the demonstration policy, this order falls outside the standard return period.</strong><br><br>The standard demonstration return window is 30 days from delivery. This order is outside that automated window, so the system cannot approve the return automatically.</div><p>You can still explain the circumstances and request human review.</p><div class="action-row"><a class="primary-button" href="human-support.html?order='+id+'">Request human review →</a><a class="secondary-button" href="../index.html">Return home</a></div>';
+ }else{
+  r.className="result show";r.innerHTML='<div class="notice"><strong>Order not recognised.</strong><br>Try NS1001 for an eligible demonstration order or NS1002 for an outside-window example.</div>';
+ }
+});
+</script>
+</main>
+<footer class="site-footer"><span>NORTHSTAR RETAIL CORE</span><span>Support Deflection MVP · Demonstration Environment</span></footer>
+</body></html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Available Alternatives | Northstar Retail Core</title>
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+<div class="brand-watermark" aria-hidden="true">NORTHSTAR RETAIL CORE</div>
+<header class="site-header">
+  <a class="brand" href="../index.html"><span class="brand-mark">N</span><span><strong>NORTHSTAR</strong><small>RETAIL CORE</small></span></a>
+  <a class="icon-button" href="../index.html"><span class="icon">⌂</span><span>Home</span></a>
+</header>
+<main class="page-shell">
+<a class="back-link" href="../index.html">← Support Centre</a>
+<section class="page-head">
+  <div><p class="eyebrow">INVENTORY</p><h1>Available Alternatives</h1></div>
+  <p>If the requested item or size is unavailable, the customer can continue shopping through relevant demonstration alternatives.</p>
+</section>
+
+<section class="panel">
+  <div class="notice"><strong>Currently unavailable?</strong><br>No problem. The support journey continues with available sizes and alternative products.</div>
+  <div id="alternatives" class="alt-grid"></div>
+</section>
+<script src="../data/demo-data.js"></script>
+<script>
+const container=document.getElementById("alternatives");
+Object.values(NORTHSTAR_DATA.products).forEach(p=>{
+  container.innerHTML += '<article class="alt-card"><img src="../'+p.image+'" alt="'+p.name+'"><h4>'+p.name+'</h4><p>'+p.colour+' · '+p.type+'</p><a class="secondary-button" href="stock.html?product='+encodeURIComponent(p.id)+'">Check sizes →</a></article>';
+});
+</script>
+</main>
+<footer class="site-footer"><span>NORTHSTAR RETAIL CORE</span><span>Support Deflection MVP · Demonstration Environment</span></footer>
+</body></html>
