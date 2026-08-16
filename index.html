@@ -1,382 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <title>Northstar Support Hub</title>
-
-    <style>
-* {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f4f7fb;
-    color: #172033;
-}
-
-.container {
-    width: min(1100px, 92%);
-    margin: auto;
-}
-
-.hero {
-    background: #101828;
-    color: white;
-    padding: 70px 0;
-    text-align: center;
-}
-
-.brand {
-    letter-spacing: 3px;
-    font-size: 14px;
-    font-weight: bold;
-}
-
-.hero h1 {
-    font-size: 46px;
-    margin: 15px 0;
-}
-
-.tagline {
-    font-size: 20px;
-}
-
-.intro {
-    text-align: center;
-    padding: 50px 0 25px;
-}
-
-.intro h2 {
-    font-size: 32px;
-}
-
-.cards {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    flex-wrap: wrap;
-}
-
-.card {
-    background: white;
-    width: 310px;
-    padding: 30px;
-    border-radius: 18px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-    text-align: center;
-}
-
-.icon {
-    font-size: 45px;
-}
-
-.card h3 {
-    font-size: 24px;
-}
-
-.card p {
-    line-height: 1.6;
-}
-
-button {
-    background: #101828;
-    color: white;
-    border: none;
-    padding: 13px 22px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 15px;
-}
-
-button:hover {
-    opacity: 0.85;
-}
-
-.support-section {
-    display: none;
-    background: white;
-    margin: 40px 0;
-    padding: 35px;
-    border-radius: 18px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-}
-
-.support-section label {
-    display: block;
-    margin-top: 15px;
-    margin-bottom: 8px;
-    font-weight: bold;
-}
-
-input,
-select {
-    width: 100%;
-    max-width: 500px;
-    padding: 13px;
-    border: 1px solid #ccd3df;
-    border-radius: 8px;
-    margin-bottom: 15px;
-}
-
-.result {
-    margin-top: 20px;
-    padding: 15px;
-    border-radius: 8px;
-    background: #eef2f7;
-    min-height: 20px;
-}
-
-footer {
-    text-align: center;
-    padding: 30px;
-    color: #667085;
-}
-
-@media (max-width: 700px) {
-
-    .hero h1 {
-        font-size: 34px;
-    }
-
-    .card {
-        width: 100%;
-    }
-
-}
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Northstar Retail Core customer support MVP">
+  <title>Northstar Retail Core | Support Centre</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
-
 <body>
-
-    <header class="hero">
-
-        <div class="container">
-
-            <p class="brand">NORTHSTAR RETAIL CO.</p>
-
-            <h1>Northstar Support Hub</h1>
-
-            <p class="tagline">
-                Fast answers. Fewer tickets. Better support.
-            </p>
-
-        </div>
-
-    </header>
-
-
-    <main class="container">
-
-        <section class="intro">
-
-            <h2>How can we help you?</h2>
-
-            <p>
-                Choose what you need help with below.
-            </p>
-
-        </section>
-
-
-        <section class="cards">
-
-
-            <!-- ORDER STATUS -->
-
-            <article class="card">
-
-                <div class="icon">📦</div>
-
-                <h3>Order Status</h3>
-
-                <p>
-                    Check the status and delivery information
-                    for your order.
-                </p>
-
-                <button onclick="showSection('order-section')">
-                    Check Order
-                </button>
-
-            </article>
-
-
-            <!-- RETURNS -->
-
-            <article class="card">
-
-                <div class="icon">🔄</div>
-
-                <h3>Returns & Refunds</h3>
-
-                <p>
-                    Find answers about returning products
-                    and refunds.
-                </p>
-
-                <button onclick="showSection('returns-section')">
-                    Get Help
-                </button>
-
-            </article>
-
-
-            <!-- STOCK -->
-
-            <article class="card">
-
-                <div class="icon">🏷️</div>
-
-                <h3>Stock Availability</h3>
-
-                <p>
-                    Check whether a product and size
-                    are available.
-                </p>
-
-                <button onclick="showSection('stock-section')">
-                    Check Stock
-                </button>
-
-            </article>
-
-        </section>
-
-
-        <!-- ORDER SECTION -->
-
-        <section id="order-section" class="support-section">
-
-            <h2>📦 Check Order Status</h2>
-
-            <label for="order-input">
-                Enter your order number
-            </label>
-
-            <input
-                id="order-input"
-                type="text"
-                placeholder="Example: NS1001"
-            >
-
-            <button id="order-button">
-                Check Order
-            </button>
-
-            <div id="order-result" class="result"></div>
-
-        </section>
-
-
-        <!-- RETURNS SECTION -->
-
-        <section id="returns-section" class="support-section">
-
-            <h2>🔄 Returns & Refunds</h2>
-
-            <label for="support-question">
-                Choose your question
-            </label>
-
-            <select id="support-question">
-
-                <option value="">
-                    Select a question
-                </option>
-
-                <option value="return">
-                    How do I return an item?
-                </option>
-
-                <option value="refund">
-                    When will I receive my refund?
-                </option>
-
-            </select>
-
-            <button id="support-button">
-                Get Answer
-            </button>
-
-            <div id="support-result" class="result"></div>
-
-        </section>
-
-
-        <!-- STOCK SECTION -->
-
-        <section id="stock-section" class="support-section">
-
-            <h2>🏷️ Check Stock Availability</h2>
-
-            <label for="product-select">
-                Product
-            </label>
-
-            <select id="product-select">
-
-                <option value="">
-                    Select product
-                </option>
-
-                <option value="Black Runner Shoes">
-                    Black Runner Shoes
-                </option>
-
-                <option value="White Classic Sneakers">
-                    White Classic Sneakers
-                </option>
-
-            </select>
-
-
-            <label for="size-select">
-                Size
-            </label>
-
-            <select id="size-select">
-
-                <option value="">
-                    Select size
-                </option>
-
-                <option value="40">40</option>
-                <option value="41">41</option>
-                <option value="42">42</option>
-                <option value="43">43</option>
-
-            </select>
-
-
-            <button id="stock-button">
-                Check Stock
-            </button>
-
-            <div id="stock-result" class="result"></div>
-
-        </section>
-
-    </main>
-
-
-    <footer>
-
-        <p>
-            Northstar Support Deflection MVP
+  <div class="brand-watermark" aria-hidden="true">NORTHSTAR RETAIL CORE</div>
+
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Northstar Retail Core home">
+      <span class="brand-mark">N</span>
+      <span>
+        <strong>NORTHSTAR</strong>
+        <small>RETAIL CORE</small>
+      </span>
+    </a>
+    <button class="icon-button home-trigger" id="homeTrigger" aria-expanded="false" aria-controls="supportNav">
+      <span class="icon" aria-hidden="true">⌂</span>
+      <span>Home</span>
+    </button>
+  </header>
+
+  <main>
+    <section class="hero-shell">
+      <div class="hero-copy">
+        <p class="eyebrow">CUSTOMER SUPPORT CENTRE</p>
+        <h1>Resolve the next step<br><em>with confidence.</em></h1>
+        <p class="hero-text">
+          A focused self-service experience for order status, returns and refunds,
+          stock availability, product alternatives and support escalation.
         </p>
+        <button class="primary-button home-trigger" id="heroHome" aria-expanded="false">
+          Enter Support Centre <span aria-hidden="true">→</span>
+        </button>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-top">
+          <span class="status-dot"></span>
+          <span>DEMONSTRATION MVP</span>
+        </div>
+        <div class="hero-card-title">Northstar<br>Retail Core</div>
+        <div class="hero-card-line"></div>
+        <p>Demonstration data only. No live orders, payments, GPS or customer notifications are connected.</p>
+      </div>
+    </section>
 
-    </footer>
+    <section class="support-nav" id="supportNav" hidden>
+      <div class="section-heading">
+        <p class="eyebrow">SUPPORT CENTRE</p>
+        <h2>Choose what you need.</h2>
+        <p>Each route is designed to provide a useful next action rather than a dead end.</p>
+      </div>
 
+      <div class="service-grid">
+        <a class="service-card" href="pages/order-status.html">
+          <span class="service-icon">↗</span>
+          <span class="service-title">Order Status</span>
+          <span class="service-copy">Check the current order stage, delivery method and estimated delivery.</span>
+          <span class="service-link">Check order <b>→</b></span>
+        </a>
 
-    <script src="./script.js"></script>
+        <a class="service-card" href="pages/returns.html">
+          <span class="service-icon">↩</span>
+          <span class="service-title">Returns & Refunds</span>
+          <span class="service-copy">Check eligibility, understand the policy and receive complete return instructions.</span>
+          <span class="service-link">Manage a return <b>→</b></span>
+        </a>
 
+        <a class="service-card featured" href="pages/stock.html">
+          <span class="service-icon">◫</span>
+          <span class="service-title">Stock Availability</span>
+          <span class="service-copy">Search a product ID, view the product image, size, colour and available alternatives.</span>
+          <span class="service-link">Check stock <b>→</b></span>
+        </a>
+
+        <a class="service-card" href="pages/human-support.html">
+          <span class="service-icon">○</span>
+          <span class="service-title">Human Support</span>
+          <span class="service-copy">Escalate an issue with a structured reference and clear context.</span>
+          <span class="service-link">Get support <b>→</b></span>
+        </a>
+      </div>
+    </section>
+
+    <section class="principles">
+      <div>
+        <p class="eyebrow">DESIGN PRINCIPLE</p>
+        <h2>Useful until the next action is clear.</h2>
+      </div>
+      <p>
+        Northstar is designed to answer the customer's immediate question and then
+        guide them forward: track, return, compare, notify or escalate.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>NORTHSTAR RETAIL CORE</span>
+    <span>Support Deflection MVP · Demonstration Environment</span>
+  </footer>
+
+  <script src="js/app.js"></script>
 </body>
-
 </html>
