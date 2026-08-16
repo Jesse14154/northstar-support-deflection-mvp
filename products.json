@@ -1,0 +1,20 @@
+[
+    {
+        "product": "Black Runner Shoes",
+        "sizes": {
+            "40": 3,
+            "41": 5,
+            "42": 8,
+            "43": 0
+        }
+    },
+    {
+        "product": "White Classic Sneakers",
+        "sizes": {
+            "40": 0,
+            "41": 4,
+            "42": 6,
+            "43": 2
+        }
+    }
+]
