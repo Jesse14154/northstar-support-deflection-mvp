@@ -1,0 +1,12 @@
+[
+    {
+        "id": "return",
+        "question": "How do I return an item?",
+        "answer": "Select the return option and follow the approved return instructions."
+    },
+    {
+        "id": "refund",
+        "question": "When will I receive my refund?",
+        "answer": "Refund timing depends on the approved return process and payment method."
+    }
+]
