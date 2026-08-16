@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500">
+<rect width="400" height="500" fill="#f5f1e9"/>
+<circle cx="200" cy="250" r="180" fill="#fff" opacity=".65"/>
+<path d="M145 175 Q200 120 255 175 L330 225 L300 290 L270 270 L270 455 L130 455 L130 270 L100 290 L70 225 Z" fill="#b9b0a2"/>
+        <path d="M145 175 Q200 250 255 175 Q245 130 200 115 Q155 130 145 175Z" fill="#938a7d"/>
+        <path d="M160 290 L240 290 L240 390 L160 390Z" fill="#a49b8e"/>
+        <text x="200" y="345" text-anchor="middle" font-family="Arial" font-size="22" font-weight="700" fill="#152c42">N</text>
+<text x="200" y="480" text-anchor="middle" font-family="Arial" font-size="12" letter-spacing="2" fill="#64717c">NORTHSTAR CORE HOODIE · STONE</text>
+</svg>

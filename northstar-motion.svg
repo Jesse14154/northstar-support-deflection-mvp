@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500">
+<rect width="400" height="500" fill="#f5f1e9"/>
+<circle cx="200" cy="250" r="180" fill="#fff" opacity=".65"/>
+<path d="M205 205 L285 165 L340 235 L305 270 L285 245 L285 455 L115 455 L115 245 L95 270 L60 235 L115 165 Z" fill="#eee9df"/>
+        <path d="M178 177 Q200 205 220 177" fill="none" stroke="#d88a45" stroke-width="6"/>
+        <text x="200" y="330" text-anchor="middle" font-family="Arial" font-size="23" font-weight="700" fill="#152c42">MOTION</text>
+<text x="200" y="480" text-anchor="middle" font-family="Arial" font-size="12" letter-spacing="2" fill="#64717c">NORTHSTAR MOTION · OFF WHITE</text>
+</svg>
