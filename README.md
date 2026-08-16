@@ -1,129 +1,34 @@
-# 🌟 NORTHSTAR SUPPORT DEFLECTION MVP
+# Northstar Retail Core — Support Deflection MVP
 
-## Fast answers. Fewer tickets. Better support.
+A professional demonstration MVP for Northstar Retail Co. It provides self-service journeys for:
 
----
+- Order status and delivery progress
+- Returns and refunds
+- Stock availability with product imagery
+- Size and colour information
+- Alternative products
+- Stock notification requests
+- Human support escalation
 
-# 1. PROJECT OVERVIEW
+## Demonstration product IDs
 
-Northstar Retail Co. receives repetitive customer-support questions
-about orders, returns and refunds, and product availability.
+- `NS-1001` — Northstar T, Midnight Navy
+- `NS-1002` — Northstar Core Hoodie, Stone
+- `NS-1003` — Northstar Motion, Off White
 
-The Northstar Support Deflection MVP demonstrates a self-service
-support approach that allows customers to find answers before
-opening a support ticket.
+## Demonstration orders
 
----
+- `NS1001` + `714440059` — With Driver / In Transit
+- `NS1002` + `757092013` — Outside the standard demonstration return window
 
-# 2. PROBLEM
+## Important
 
-Customers often need quick answers to simple questions such as:
+All data is demonstration data. The prototype does not connect to live inventory, live GPS, payment systems, email services or real customer records.
 
-- Where is my order?
-- How do I return an item?
-- When will I receive my refund?
-- Is my preferred product and size available?
+## GitHub Pages
 
-These questions can create repetitive support work.
+Enable GitHub Pages from:
 
-Northstar provides a prototype self-service Support Hub to address
-these common questions.
+**Settings → Pages → Deploy from a branch → main → /(root)**
 
----
-
-# 3. MVP FEATURES
-
-## 📦 Order Status
-
-Customers enter an order number and receive:
-
-- Order status
-- Delivery information
-
-The prototype also handles unknown orders.
-
----
-
-## 🔄 Returns & Refunds
-
-Customers can select common questions about:
-
-- Returns
-- Refunds
-
-The prototype displays the relevant guidance.
-
----
-
-## 🏷️ Stock Availability
-
-Customers can select:
-
-- Product
-- Size
-
-The system then displays:
-
-- Available quantity
-- Currently unavailable
-- Product not found
-- Missing information messages
-
----
-
-# 4. CUSTOMER JOURNEY
-
-Customer
-
-↓
-
-Northstar Support Hub
-
-↓
-
-Select support category
-
-↓
-
-Enter/select required information
-
-↓
-
-System checks prototype data
-
-↓
-
-Customer receives answer
-
----
-
-# 5. TECHNOLOGY
-
-The MVP uses:
-
-- HTML
-- CSS
-- JavaScript
-- JSON
-- GitHub
-
----
-
-# 6. PROJECT STRUCTURE
-
-```text
-northstar-support-deflection-mvp
-│
-├── README.md
-├── TEAM_CHARTER.md
-├── REQUIREMENTS.md
-├── TEST_RESULTS.md
-├── BUG_LOG.md
-├── index.html
-├── style.css
-├── script.js
-│
-└── data
-    ├── orders.json
-    ├── products.json
-    └── support.json
+The required entry point is the root-level `index.html`.
